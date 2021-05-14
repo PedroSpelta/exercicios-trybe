@@ -39,9 +39,20 @@ p,li {
 }
 #header2{
     max-width: 1170px;
-    background-color: red;
     margin-left: 80px;
 }
+#testimonial {
+    text-align: center;
+}
+#market-text{
+    width: 70%;
+    margin: auto;
+}
+#market-student{
+    margin: 60px;
+    width: 30%;
+}
+
 *{
     margin: 0px;
 }
