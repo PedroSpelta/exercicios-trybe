@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+.lista{
+
+}
+li:hover{
+    background-color: red;
+}
+li:active{
+    font-size: 30px;
+}
+li{
+    list-style: none;
+}
