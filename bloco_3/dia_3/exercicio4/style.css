@@ -4,7 +4,7 @@ div:hover{
 h3{
     margin: 0px;
 }
-div:nth-child(3){
+body div:nth-child(3){
     background-color: rgb(250, 0, 0);
 }
 div:nth-child(4){
