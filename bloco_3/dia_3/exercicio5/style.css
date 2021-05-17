@@ -49,3 +49,26 @@ li em{
 #lista-linguagens li.java{
     background-color: pink;
 }
+.site1 a:hover{
+    font-weight: bold;
+    color: orange;
+}
+.site2 a:hover{
+    font-weight: bold;
+    color: green;
+}
+.site3 a:hover{
+    font-weight: bold;
+    color: black;
+}
+.site4 a:hover{
+    font-weight: bold;
+    color: yellow;
+}
+.site5 a:hover{
+    font-weight: bold;
+    color: green;
+}
+ul li a:visited{
+    color: blue;
+}
