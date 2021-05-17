@@ -43,3 +43,9 @@ li{
 li em{
     font-weight: bold;
 }
+#lista-linguagens li:nth-child(-n+3){
+    color: mediumblue;
+}
+#lista-linguagens li.java{
+    background-color: pink;
+}
