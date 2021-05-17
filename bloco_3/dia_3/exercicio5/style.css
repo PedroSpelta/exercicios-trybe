@@ -46,7 +46,7 @@ li em{
 #lista-linguagens li:nth-child(-n+3){
     color: mediumblue;
 }
-#lista-linguagens li.java{
+#lista-linguagens li[val^="Java"]{
     background-color: pink;
 }
 .site1 a:hover{
