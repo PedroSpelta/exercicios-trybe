@@ -1,0 +1,31 @@
+h1{
+  font-size: 18px;
+}
+h2{
+  font-size: 14px;
+}
+body{
+  font-family: monospace;
+  font-size: 11px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+}
+main{
+  background-color: lightblue;
+  display: inline-block;
+  text-align: center;
+}
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table{
+  border-collapse: collapse;
+}
+aside, .teste{
+  display: inline-flex;
+  margin: auto;
+}
