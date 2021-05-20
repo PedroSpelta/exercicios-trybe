@@ -13,7 +13,7 @@ for (let number of numbers){
     oddNumbers+=1;
   }
   if (number<smaller){
-    smaller = numbers;
+    smaller = number;
   }
 }
 console.log('A soma total é :', sum);
@@ -21,3 +21,10 @@ console.log('A média é :', (sum/numbers.length));
 let biggerThan20 = (sum>=20) ? console.log("Valor maior que 20"):console.log('Valor menor que 20');
 console.log('O maior numero do array é :', bigger);
 let odd = (oddNumbers>=0)?console.log('Quantidade de impares: ', oddNumbers):console.log('Não tem impares');
+console.log('O menor numero do array é :', smaller);
+
+let arr =[];
+for(let numero = 1;numero<26;numero++){
+  arr.push(numero);
+}
+console.log(arr)
