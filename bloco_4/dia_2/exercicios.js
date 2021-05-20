@@ -28,3 +28,4 @@ for(let numero = 1;numero<26;numero++){
   arr.push(numero);
 }
 console.log(arr)
+
