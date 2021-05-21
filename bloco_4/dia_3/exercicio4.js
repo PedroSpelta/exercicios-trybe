@@ -1,3 +1,5 @@
+//pascal triangle
+
 let n = 5;
 if (n%2!=0){
   let height = (n+1)/2;
