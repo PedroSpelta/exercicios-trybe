@@ -1,5 +1,5 @@
 function sumNumber(num){
   half = (num+1)/2;
-  console.log(half*num)
+  return half*num
 }
-sumNumber(5);
+console.log( sumNumber(5))
