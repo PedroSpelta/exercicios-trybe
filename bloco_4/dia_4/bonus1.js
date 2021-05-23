@@ -4,7 +4,8 @@ translator = {
   'X':10,
   'L':50,
   'C':100,
-  'D':500
+  'D':500,
+  'M':1000
 }
 
 function romanToNumber(roman){
@@ -12,10 +13,9 @@ function romanToNumber(roman){
   for(let indexRoman = 0; indexRoman < roman.length; indexRoman++){
     let actualDigit = translator[roman[indexRoman]];
     let nextDigit = translator[roman[indexRoman+1]];
-    if (actualDigit > nextDigit) number +=actualDigit;
-    else if (actualDigit < nextDigit) number -=actualDigit;
+    if (actualDigit < nextDigit) number -=actualDigit;
     else number +=actualDigit
   }
   return number;
 }
-console.log (romanToNumber('CXXVI'))
+console.log (romanToNumber('CDXLIV'))
