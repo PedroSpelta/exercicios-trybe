@@ -1,0 +1,24 @@
+{
+  "name": "exercicios-trybe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroSpelta/exercicios-trybe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroSpelta/exercicios-trybe/issues"
+  },
+  "homepage": "https://github.com/PedroSpelta/exercicios-trybe#readme",
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

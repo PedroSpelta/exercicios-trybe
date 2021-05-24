@@ -18,7 +18,7 @@ const basket = [
   'Banana', 'Pera', 'Abacate', 'Uva',
 ];
 
-basketPrint(basket);
+basketPrint(basket)
 
 function basketPrint(basketArray){
   let finalObj = {};
