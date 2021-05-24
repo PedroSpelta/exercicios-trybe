@@ -17,18 +17,20 @@ const basket = [
   'Pera', 'Melancia', 'Jaca', 'Banana', 'Laranja', 'Jaca',
   'Banana', 'Pera', 'Abacate', 'Uva',
 ];
-
-basketPrint(basket)
-
-function basketPrint(basketArray){
-  let finalObj = {};
+basketPrint(basket);
+/**
+ * @param {array} basketArray Array with items bought
+ */
+function basketPrint(basketArray) {
+  const finalObj = {};
   let printOrder = 'A sua cesta é:';
-  for (let item of basketArray){
+  for (const item of basketArray) {
     if (!(item in finalObj)) finalObj[item] =0;
     else finalObj[item] +=1;
   }
-  for (let item in finalObj){
-    printOrder += ` ${finalObj[`${item}`]} ${item}s,`
+  // eslint-disable-next-line guard-for-in
+  for (const item in finalObj) {
+    printOrder += ` ${finalObj[`${item}`]} ${item}s,`;
   }
-  console.log(printOrder.slice(0,-1))
+  console.log(printOrder.slice(0, -1));
 }
