@@ -48,21 +48,20 @@
 
     let inicial = document.querySelector('#paiDoPai')
     removeSons(inicial);
-    function removeSons(pai){
-      if (!(pai.id === 'paiDoPai' || pai.id === 'pai' || pai.id === 'elementoOndeVoceEsta' || pai.id === 'primeiroFilhoDoFilho')){
-        let paiDoPai = pai.parentElement
-        pai.parentElement.removeChild(pai);
-        removeSons(paiDoPai)
+    function removeSons(element){
+      if (!(element.id === 'paiDoPai' || element.id === 'pai' || element.id === 'elementoOndeVoceEsta' || element.id === 'primeiroFilhoDoFilho')){
+        let elementParent = element.parentElement
+        element.parentElement.removeChild(element);
+        removeSons(elementParent)
       }
-      else if (pai.children.length > 0){
-        removeSons(pai.children[0])
+      else if (element.children.length > 0){
+        removeSons(element.firstChild)
       }
-      else if (pai.nextElementSibling !== null ){
-        removeSons(pai.nextElementSibling)
+      else if (element.nextElementSibling !== null ){
+        removeSons(element.nextElementSibling)
       }
-
-      else if (pai.parentElement.nextElementSibling !== null){
-        removeSons(pai.parentElement.nextElementSibling)
+      else if (element.parentElement.nextElementSibling !== null){
+        removeSons(element.parentElement.nextElementSibling)
       }
     }
 
