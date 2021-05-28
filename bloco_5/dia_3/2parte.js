@@ -23,7 +23,16 @@ function addTech(originEvent) {
     actualTech.classList.remove('tech');
   }
   originEvent.target.setAttribute('class', 'tech');
-  console.log(originEvent.target);
+  changeInputPH(originEvent.target);
+}
+
+function changeInputPH(div) {
+  const order = {
+    divUm: 'primeira',
+    divDois: 'segunda',
+    divTres: 'terceira',
+  };
+  input.placeholder = `Alterar a ${order[div.id]} tecnologia`;
 }
 
 // 3.Crie uma função que, ao digitar na caixa de texto, altere
