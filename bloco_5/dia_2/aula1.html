@@ -30,6 +30,59 @@
     document.querySelector('#elementoOndeVoceEsta').nextElementSibling
     //Agora acesse o terceiroFilho a partir de pai .
     document.querySelector('#pai').children[2]
+    //Crie um irmão para elementoOndeVoceEsta .
+    let irmaoElementoOnde = document.createElement('div')
+    irmaoElementoOnde.innerText = 'irmao'
+    document.querySelector('#pai').appendChild(irmaoElementoOnde)
+    // Crie um filho para elementoOndeVoceEsta .
+    let filhoElementoOnde = document.createElement('div')
+    filhoElementoOnde.innerText = 'filho'
+    document.querySelector('#elementoOndeVoceEsta').appendChild(filhoElementoOnde)
+    // Crie um filho para primeiroFilhoDoFilho .
+    let filhoDoPrimeiroFilhoDoFilho = document.createElement('div')
+    filhoDoPrimeiroFilhoDoFilho.setAttribute('id','testando')
+    filhoDoPrimeiroFilhoDoFilho.innerHTML = 'Filho do primeiro filho do filho'
+    document.querySelector('#primeiroFilhoDoFilho').appendChild(filhoDoPrimeiroFilhoDoFilho)
+    // A partir desse filho criado, acesse terceiroFilho .
+    document.querySelector('#testando').parentElement.parentElement.nextElementSibling
+
+    let pai = document.querySelector('#paiDoPai')
+    removeSons2(pai);
+    function removeSons(pai){
+      if (pai.children.length > 0){
+        for (let child = pai.children[0]; child.nextElementSibling !== null; child = child.nextElementSibling){
+          console.log(child)
+          if (child.id !== ('pai' || 'elementoOndeVoceEsta' || 'primeiroFilhoDoFilho')){
+            pai.removeChild(child);
+          }
+        }
+      }
+    }
+
+    function removeSons2(pai){
+      console.log('funcao analizando o', pai)
+      if (!(pai.id === 'paiDoPai' || pai.id === 'pai' || pai.id === 'elementoOndeVoceEsta' || pai.id === 'primeiroFilhoDoFilho')){
+        console.log('removendo o', pai.id);
+        let paiDoPai = pai.parentElement
+        pai.parentElement.removeChild(pai);
+        console.log('voltaremos para o', paiDoPai)
+        removeSons2(paiDoPai)
+      }
+      else if (pai.children.length > 0){
+        console.log('if de length')
+        removeSons2(pai.children[0])
+      }
+      else if (pai.nextElementSibling !== null ){
+        console.log('if de nextSibling')
+        removeSons2(pai.nextElementSibling)
+      }
+
+      else if (pai.parentElement.nextElementSibling !== null){
+        console.log('if de parent next sibling')
+        removeSons2(pai.parentElement.nextElementSibling)
+      }
+    }
+
   </script>
 </body>
 </html>
