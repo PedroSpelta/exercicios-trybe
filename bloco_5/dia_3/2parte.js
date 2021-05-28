@@ -12,7 +12,7 @@ divDois.addEventListener('click', addTech);
 divTres.addEventListener('click', addTech);
 input.addEventListener('keyup', changeTechText);
 myWebpage.addEventListener('dblclick', myTopRedirect);
-myWebpage.addEventListener('mouseover', myTopChangeColor);
+myWebpage.addEventListener('mouseenter', myTopChangeColor);
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento selecionado;
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
