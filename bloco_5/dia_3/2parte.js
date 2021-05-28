@@ -12,6 +12,7 @@ divDois.addEventListener('click', addTech);
 divTres.addEventListener('click', addTech);
 input.addEventListener('keyup', changeTechText);
 myWebpage.addEventListener('dblclick', myTopRedirect);
+myWebpage.addEventListener('mouseover', myTopChangeColor);
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento selecionado;
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
@@ -25,16 +26,16 @@ function addTech(originEvent) {
   console.log(originEvent.target);
 }
 
-// 3.Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
-// com a classe 'tech';
+// 3.Crie uma função que, ao digitar na caixa de texto, altere
+// o texto do elemento com a classe 'tech';
 
 function changeTechText(originEvent) {
   const text = document.querySelector('.tech');
   text.innerText = input.value;
 }
 
-// 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
-// redirecione para alguma página;
+// 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do
+// Spotrybefy', ele redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portifólio?
 
 function myTopRedirect(originEvent) {
@@ -42,8 +43,12 @@ function myTopRedirect(originEvent) {
   window.open(website);
 }
 
-// 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
-// a cor do mesmo;
+// 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy',
+// altere a cor do mesmo;
+
+function myTopChangeColor(originEvent) {
+  originEvent.target.style.color = 'red';
+}
 
 // Segue abaixo um exemplo do uso de event.target:
 
