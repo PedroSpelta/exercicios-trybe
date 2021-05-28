@@ -11,9 +11,10 @@ const myWebpage = document.getElementById('mySpotrybefy');
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento selecionado;
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
-divUm.addEventListener('mouseover', addTech);
-divDois.addEventListener('mouseover', addTech);
-divTres.addEventListener('mouseover', addTech);
+divUm.addEventListener('click', addTech);
+divDois.addEventListener('click', addTech);
+divTres.addEventListener('click', addTech);
+input.addEventListener('keyup', changeTechText);
 
 function addTech(originEvent) {
   const actualTech = document.querySelector('.tech');
@@ -24,8 +25,13 @@ function addTech(originEvent) {
   console.log(originEvent.target);
 }
 
-// 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
+// 3.Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
+function changeTechText(originEvent) {
+  console.log(input.value);
+  const text = document.querySelector('.tech');
+  text.innerText = input.value;
+}
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
