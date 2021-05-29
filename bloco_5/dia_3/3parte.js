@@ -103,3 +103,12 @@ function zoomOff(originEvent) {
   originEvent.target.style.fontSize = '20px';
   originEvent.target.style.fontWeight = '500';
 }
+
+// exercicio 7
+taskCreator('cozinhar');
+function taskCreator(string) {
+  const myTask = document.querySelector('.my-tasks');
+  const element = document.createElement('span');
+  element.innerText = string;
+  myTask.appendChild(element);
+}
