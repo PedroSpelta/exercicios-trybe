@@ -112,3 +112,28 @@ function taskCreator(string) {
   element.innerText = string;
   myTask.appendChild(element);
 }
+
+// exercicio 8
+addLegendColorToTask('green');
+function addLegendColorToTask(stringColor) {
+  const myTask = document.querySelector('.my-tasks');
+  const div = document.createElement('div');
+  div.setAttribute('class', 'task');
+  div.style.backgroundColor = stringColor;
+  myTask.appendChild(div);
+}
+
+// exercicio 9
+addTaskSelected();
+function addTaskSelected() {
+  const allTasks = document.querySelectorAll('.task');
+  for (task of allTasks) {
+    task.addEventListener('click', selectTask);
+  }
+}
+
+function selectTask(originEvent) {
+  const list = originEvent.target.classList;
+  if (list.length < 2) list.add('selected');
+  else list.remove('selected');
+}
