@@ -149,7 +149,10 @@ function addEventDaySelected() {
 
 function daySelect(eventOrigin) {
   const selected = document.querySelector('.selected');
-  if (selected !== null) {
+  if (selected !== null && eventOrigin.target.style.color === selected.style.backgroundColor) {
+    eventOrigin.target.style.color = '#777';
+    eventOrigin.target.classList.remove('day-selected');
+  } else if (selected !== null) {
     eventOrigin.target.style.color = selected.style.backgroundColor;
     eventOrigin.target.classList.add('day-selected');
   }
