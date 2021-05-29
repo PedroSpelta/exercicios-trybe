@@ -157,3 +157,24 @@ function daySelect(eventOrigin) {
     eventOrigin.target.classList.add('day-selected');
   }
 }
+
+// bonus
+const addAppointmentButton = document.querySelector('#btn-add');
+const appointmentText = document.querySelector('#task-input');
+const appointList = document.querySelector('.task-list');
+const missingText = 'Não é possível adicionar compromisso vazio';
+addAppointmentButton.addEventListener('click', addAppointment);
+appointmentText.addEventListener('keypress', verifyEnterAppointment);
+function addAppointment(eventOrigin) {
+  const appointment = document.createElement('li');
+  if (appointmentText.value === '') return alert(missingText);
+  else {
+    appointment.innerText = appointmentText.value;
+    appointList.appendChild(appointment);
+    appointmentText.value = '';
+  }
+}
+function verifyEnterAppointment(eventOrigin) {
+  const keyPressed = eventOrigin.which || eventOrigin.keyCode;
+  if (keyPressed === 13) return addAppointment(eventOrigin);
+}
