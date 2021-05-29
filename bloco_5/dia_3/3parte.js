@@ -88,3 +88,18 @@ function fridayTextChanger(eventOrigin) {
     }
   }
 }
+
+// exercicio 6
+const dayParent = document.querySelector('.day').parentElement;
+for (day of dayParent.children) {
+  day.addEventListener('mouseenter', zoomIn);
+  day.addEventListener('mouseleave', zoomOff);
+}
+function zoomIn(originEvent) {
+  originEvent.target.style.fontSize = '26px';
+  originEvent.target.style.fontWeight = 'bold';
+}
+function zoomOff(originEvent) {
+  originEvent.target.style.fontSize = '20px';
+  originEvent.target.style.fontWeight = '500';
+}
