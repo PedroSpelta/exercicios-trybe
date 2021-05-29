@@ -124,8 +124,8 @@ function addLegendColorToTask(stringColor) {
 }
 
 // exercicio 9
-addTaskSelected();
-function addTaskSelected() {
+addEventTaskSelected();
+function addEventTaskSelected() {
   const allTasks = document.querySelectorAll('.task');
   for (task of allTasks) {
     task.addEventListener('click', selectTask);
@@ -136,4 +136,21 @@ function selectTask(originEvent) {
   const list = originEvent.target.classList;
   if (list.length < 2) list.add('selected');
   else list.remove('selected');
+}
+
+// exercicio 10
+addEventDaySelected();
+function addEventDaySelected() {
+  const days = document.querySelectorAll('.day');
+  for (day of days) {
+    day.addEventListener('click', daySelect);
+  }
+}
+
+function daySelect(eventOrigin) {
+  const selected = document.querySelector('.selected');
+  if (selected !== null) {
+    eventOrigin.target.style.color = selected.style.backgroundColor;
+    eventOrigin.target.classList.add('day-selected');
+  }
 }
