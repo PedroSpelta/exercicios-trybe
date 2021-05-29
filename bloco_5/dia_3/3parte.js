@@ -32,7 +32,7 @@ function createDaysOfMonth(monthList, holiDays) {
     const insertDay = document.createElement('li');
     insertDay.setAttribute('class', 'day');
     insertDay.innerText = monthList[index];
-    if (index%5 === 0) {
+    if ((index+2)%7 === 0) {
       insertDay.classList.add('friday');
     }
     if (monthList[index] === holiDays[holiCount]) {
@@ -72,3 +72,19 @@ function holidayColorChanger(eventOrigin) {
 
 // exercicio4
 const holidayButton = dinButton('Sexta-feira', 'btn-friday');
+
+// exercicio5
+holidayButton.addEventListener('click', fridayTextChanger);
+function fridayTextChanger(eventOrigin) {
+  const allFridays = document.querySelectorAll('.friday');
+  if (allFridays[0].innerText === 'Sexta') {
+    for (index = 0; index < allFridays.length; index += 1) {
+      const anterior = allFridays[index].previousElementSibling.innerText;
+      allFridays[index].innerText = parseInt(anterior) + 1;
+    }
+  } else {
+    for (index = 0; index < allFridays.length; index += 1) {
+      allFridays[index].innerText = 'Sexta';
+    }
+  }
+}
