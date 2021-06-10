@@ -1,4 +1,22 @@
+/* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
+
+async function getStates() {
+  const request = await fetch('https://www.geonames.org/childrenJSON?geonameId=3469034');
+  const data = await request.json();
+  const list = [];
+  data.geonames.forEach((element) => {
+    list.push({
+      'id': element.geonameId,
+      'name': element.toponymName,
+      'simb': element.adminCodes1.ISO3166_2,
+    });
+  });
+  return list;
+}
+
+a = getStates();
+console.log(a);
 
 const estados = {
   'Acre': 'AC',
@@ -52,9 +70,6 @@ function verifyDate() {
     console.log(errorMsg.length);
   }
   return errorMsg;
-  // if (errorMsg.length > 0) {
-  //   window.alert(errorMsg);
-  // }
 }
 
 const cpf = document.querySelector('#cpf');
@@ -70,6 +85,10 @@ cpf.addEventListener('keyup', (event)=>{
     }
   }
 });
+
+function verifyAdress() {
+
+}
 
 function verifyCpf() {
   const cpf = document.querySelector('#cpf');
@@ -94,15 +113,6 @@ function verifyName() {
   }
 }
 
-
-function verifyAll(event) {
-  event.preventDefault();
-  // verifyName();
-  // verifyDate();
-  // verifyEmail();
-  verifyCpf();
-}
-
 function createStates() {
   const selectState = document.querySelector('#input-estado');
   Object.entries(estados).map((item) =>{
@@ -113,6 +123,14 @@ function createStates() {
   });
 }
 
+
+function verifyAll(event) {
+  event.preventDefault();
+  // verifyName();
+  // verifyDate();
+  // verifyEmail();
+  // verifyCpf();
+}
 window.onload = () => {
   createStates();
 };
