@@ -57,6 +57,28 @@ function verifyDate() {
   // }
 }
 
+const cpf = document.querySelector('#cpf');
+cpf.addEventListener('keyup', (event)=>{
+  const text = event.target.value;
+  if (event.key !== 'Backspace' && event.key !== 'Delete' ) {
+    if (text.length < 5) {
+      event.target.value = text.replace(/^(\d{3})(\d{0,2})$/g, '$1.$2');
+    } else if (text.length < 8) {
+      event.target.value = text.replace(/^(\d{3}).(\d{3})(\d{0,2})$/g, '$1.$2.$3');
+    } else {
+      event.target.value = text.replace(/^(\d{3}).(\d{3}).(\d{3})(\d{0,2})$/g, '$1.$2.$3-$4');
+    }
+  }
+});
+
+function verifyCpf() {
+  const cpf = document.querySelector('#cpf');
+  const numbers = cpf.value.match(/\d+/g).join('');
+  if (cpf.value.length < 14 || numbers.length < 11) {
+    return 'O seu cpf é inválido';
+  }
+}
+
 function verifyEmail() {
   const mail = document.querySelector('#email');
   const mR = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -65,11 +87,20 @@ function verifyEmail() {
   }
 }
 
+function verifyName() {
+  const name = document.querySelector('#name');
+  if (name.value.lenght < 1) {
+    return 'O campo nome não foi preenchido';
+  }
+}
+
+
 function verifyAll(event) {
   event.preventDefault();
-  verifyDate();
-  verifyEmail();
-  verifyRequired();
+  // verifyName();
+  // verifyDate();
+  // verifyEmail();
+  verifyCpf();
 }
 
 function createStates() {
@@ -80,10 +111,6 @@ function createStates() {
     estado.innerText = item[0];
     selectState.appendChild(estado);
   });
-}
-
-function verifyRequired() {
-
 }
 
 window.onload = () => {
