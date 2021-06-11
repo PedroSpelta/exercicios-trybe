@@ -11,27 +11,27 @@
   <div id="cabecalho">
     <h1>Formulário curículo</h1>
   </div>
-  <form action="">
+  <form action="#" class="js-form form">
     <fieldset>
 
       <div class="entrada-texto">
         <label for="">
           Digite o seu nome
-          <input id="name" type="text" name="nome" maxlength="40" required>
+          <input id="name" type="text" name="nome" maxlength="40" data-validate-field="name">
         </label><br>
       </div>
 
       <div class="entrada-texto">
       <label for="">
         Digite o seu e-mail
-        <input type="text" id="email" name="email" maxlength="50" required>
+        <input type="text" id="email" name="email" maxlength="50" required data-validate-field="email">
       </label><br>
       </div>
 
       <div class="entrada-texto">
         <label for="">
           Digite o seu CPF
-          <input id="cpf" type="text" name="cpf" maxlength="14" pattern="[0-9.-]" required>
+          <input id="cpf" type="text" name="cpf" maxlength="14" pattern="[0-9.-]" required data-validate-field="cpf"> 
         </label><br>
       </div>
 
@@ -107,9 +107,9 @@
       </div>
 
     </fieldset>
-    <input id="submit" type="submit" onclick=verifyAll(event)>
+    <input id="submit" type="submit">
   </form>
   </body>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../just-validate.min.js"></script>
   <script src="script.js"></script>
   </html>
