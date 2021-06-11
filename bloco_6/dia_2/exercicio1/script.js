@@ -15,10 +15,28 @@ new window.JustValidate('.js-form', {
       required: true,
       minLength: 14,
     },
+    adress: {
+      required: true,
+    },
+    city: {
+      required: true,
+    },
+    state: {
+      required: true,
+      function: (name, value) => {
+        return value !== '--escolha um estado--';
+      },
+    },
+    radioHouse: {
+      required: true,
+    },
   },
   messages: {
     name: 'O nome precisa ter 3 caracteres',
     email: 'Digite um e-mail válido',
+    cpf: 'Digite um cpf válido',
+    state: 'Escolha um estado válido',
+    cpf: 'Digite um cpf válido',
     cpf: 'Digite um cpf válido',
   },
 

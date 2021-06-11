@@ -38,35 +38,39 @@
       <div class="entrada-texto">
         <label for="">
           Digite o seu endereço
-          <input id="endereco" type="text" name="endereço" maxlength="200" required>
+          <input id="endereco" type="text" name="endereço" maxlength="200" required data-validate-field="adress">
         </label><br>
       </div>
 
       <div class="entrada-texto">
         <label for="">
           Digite a sua cidade
-          <input type="text" name="cidade" maxlength="200" required>
+          <input type="text" name="cidade" maxlength="200"  required data-validate-field="city">
         </label><br>
       </div>
 
       <div class="entrada-texto">
         <label for="">
-          <select name="estado" id="input-estado">
-            <option hidden default selected>Escolha um estado</option>
+          <select name="estado" id="input-estado" required data-validate-field="state">
+            <option hidden default selected >
+              <span style="color: gray;">
+                --escolha um estado--
+              </span>
+            </option>
           </select>
         </label><br>
       </div>
 
       <div class="entrada-texto">
         <label for="">
-          <input type="radio" class="radio" name="casa" id="casa" value="casa">
+          <input type="radio" class="radio" name="casa" id="casa" value="casa" data-validate-field="radioHouse">
           Casa
         </label><br>
       </div>
 
       <div class="entrada-texto">
         <label for="">
-          <input type="radio" class="radio" name="casa" id="apartamento" value="apartamento">
+          <input type="radio" class="radio" name="casa" id="apartamento" value="apartamento" data-validate-field="radioHouse">
           Apartamento
         </label><br>
       </div>
