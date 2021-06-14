@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items:center;
+}
+
+form {
+  margin: 0;
+  width: 24%;
+}
+
+fieldset {
+  display: inline-block;
+  margin: 0 auto;
+  margin-inline-end: 0;
+  width: 100%;
+  border: 1px black solid;
+  border-radius: 10px 10px;
+}
+
+.entrada-texto label{
+  margin: 10px 20px;
+  display: inline-block;
+}
+.entrada-texto input{
+  display: block;
+  width: 300px;
+}
+
+input.radio {
+  width: auto;
+  display: inline-block;
+}
+
+textarea {
+  min-width: 300px;
+  min-height: 100px;
+  max-width: 300px;
+  max-height: 200px;
+}
