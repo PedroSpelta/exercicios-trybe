@@ -1,8 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 
+const Task = (value) => {
+  return (
+    <li>{value}</li>
+  );
+}
+
+const taskList = 'cafe comer dormir'.split(' ');
+
 function App() {
-  return (<span>Hello, world!</span>);
+  return (
+    taskList.map((task) => Task(task))
+  );
 }
 
 export default App;
